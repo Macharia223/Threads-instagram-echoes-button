@@ -4,7 +4,7 @@ const clonedButton = document.getElementById("cloned-button");
 const navigateToImagePage = () => {
   // Create a new image element to style it before displaying
   const image = document.createElement("img");
-  image.src = "/images/Upload 1.jpg"; // Path to the image to display
+  image.src = "Images/Upload 1.jpg"; // Path to the image to display
   
   // Style the image as desired (adjust as needed)
   image.style.width = "100%";
@@ -24,7 +24,7 @@ clonedButton.addEventListener("click", navigateToImagePage);
 
 // Background image styling (moved to script.js for dynamic updates)
 const body = document.body;
-const imgPath = "/images/Upload 1.jpg"; // Replace with your actual image path
+const imgPath = "Images/Upload 1.jpg"; // Replace with your actual image path
 
 function setCenteredBackground() {
   body.style.backgroundImage = `url(${imgPath})`;
