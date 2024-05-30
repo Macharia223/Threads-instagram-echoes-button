@@ -34,7 +34,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url("images/Page 3.jpg"); /* This background image remains as before */
+    background-image: url("Images/Page 3.jpg"); /* This background image remains as before */
     background-size: cover;
     background-position: center;
 }
