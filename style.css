@@ -23,7 +23,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: <img src="/images/page3.png";
+  background-image: url(/images/pageone.jpg");
   background-size: cover;
   background-position: center;
 }
