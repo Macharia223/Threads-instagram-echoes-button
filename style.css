@@ -1,0 +1,64 @@
+#icon-button,
+#cloned-button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  width: 2.54em;
+  height: 2.32em;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute; /* Maintained for scroll adjustment */
+}
+
+#icon-button img,
+#cloned-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#page-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("/storage/emulated/0/Fonts/Page 3.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.hidden {
+  display: none;
+}
+
+#scroll-container {
+  display: flex;
+  height: 100vh;
+  overflow-x: hidden; /* Initially hide horizontal scroll */
+  scroll-snap-type: x mandatory;
+}
+
+.scroll-page {
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+.dynamic-button {
+  position: absolute;
+}
+
+/* Button positions for vertical scrolling */
+#icon-button.vertical {
+  top: 73.53vh;  /* Responsive positioning using vh */
+  left: 40%;   /* Centered horizontally */
+  transform: translateX(-50%); /* Offset button width */
+}
+
+#cloned-button.vertical {
+  top: 86.3vh; /* Adjusted position for cloned button */
+  left: 40%;   /* Centered horizontally */
+  transform: translateX(-50%); /* Offset button width */
+}
