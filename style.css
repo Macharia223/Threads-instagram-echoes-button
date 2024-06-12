@@ -3,8 +3,8 @@
   border: none;
   background: transparent;
   cursor: pointer;
-  width: 2.54em;
-  height: 2.32em;
+  width: 3.54em;
+  height: 3.32em;
   border-radius: 50%;
   overflow: hidden;
   position: absolute; /* Maintained for scroll adjustment */
@@ -23,7 +23,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url("/Images/Page 3.jpg");
+  background-image: url("/images/pageone.jpg");
   background-size: cover;
   background-position: center;
 }
