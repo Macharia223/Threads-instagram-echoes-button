@@ -3,8 +3,8 @@
   border: none;
   background: transparent;
   cursor: pointer;
-  width: 3.em;
-  height: 3.em;
+  width: 2.54em;
+  height: 2.32em;
   border-radius: 50%;
   overflow: hidden;
   position: absolute; /* Maintained for scroll adjustment */
@@ -23,7 +23,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url("images/zuck.jpg");
+  background-image: url("images/zuck.jpg"); /* Ensure this path is correct */
   background-size: cover;
   background-position: center;
 }
@@ -52,13 +52,13 @@
 
 /* Button positions for vertical scrolling */
 #icon-button.vertical {
-  top: 50.53vh;  /* Responsive positioning using vh */
-  left: 65%;   /* Centered horizontally */
+  top: 73.53vh;  /* Responsive positioning using vh */
+  left: 50%;   /* Centered horizontally */
   transform: translateX(-50%); /* Offset button width */
 }
 
 #cloned-button.vertical {
-  top: 60.3vh; /* Adjusted position for cloned button */
-  left: 650%;   /* Centered horizontally */
+  top: 86.3vh; /* Adjusted position for cloned button */
+  left: 50%;   /* Centered horizontally */
   transform: translateX(-50%); /* Offset button width */
 }
