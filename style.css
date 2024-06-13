@@ -1,23 +1,13 @@
-#page-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-}
-
 #icon-button,
 #cloned-button {
   border: none;
   background: transparent;
   cursor: pointer;
-  width: 4.0em;
-  height: 4.0em;
+  width: 4.em;
+  height: 4.em;
   border-radius: 50%;
   overflow: hidden;
-  position: absolute;
+  position: absolute; /* Maintained for scroll adjustment */
 }
 
 #icon-button img,
@@ -27,6 +17,17 @@
   object-fit: cover;
 }
 
+#page-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("images/zuck.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
 .hidden {
   display: none;
 }
@@ -34,7 +35,7 @@
 #scroll-container {
   display: flex;
   height: 100vh;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Initially hide horizontal scroll */
   scroll-snap-type: x mandatory;
 }
 
@@ -51,13 +52,13 @@
 
 /* Button positions for vertical scrolling */
 #icon-button.vertical {
-  top: 73.53vh;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 73.53vh;  /* Responsive positioning using vh */
+  left: 40%;   /* Centered horizontally */
+  transform: translateX(-50%); /* Offset button width */
 }
 
 #cloned-button.vertical {
-  top: 86.3vh;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 86.3vh; /* Adjusted position for cloned button */
+  left: 40%;   /* Centered horizontally */
+  transform: translateX(-50%); /* Offset button width */
 }
