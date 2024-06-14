@@ -3,8 +3,8 @@
   border: none;
   background: transparent;
   cursor: pointer;
-  width: 3.7em;
-  height: 3.7em;
+  width: 3.82em;
+  height: 3.82em;
   border-radius: 50%;
   overflow: hidden;
   position: absolute; /* Maintained for scroll adjustment */
@@ -52,13 +52,13 @@
 
 /* Button positions for vertical scrolling */
 #icon-button.vertical {
-  top: 30.53vh;  /* Responsive positioning using vh */
-  left: 80%;   /* Centered horizontally */
+  top: 65vh;  /* Responsive positioning using vh */
+  left: 65%;   /* Centered horizontally */
   transform: translateX(-50%); /* Offset button width */
 }
 
 #cloned-button.vertical {
-  top: 55.3vh; /* Adjusted position for cloned button */
-  left: 80%;   /* Centered horizontally */
+  top: 78.3vh; /* Adjusted position for cloned button */
+  left: 65%;   /* Centered horizontally */
   transform: translateX(-50%); /* Offset button width */
 }
