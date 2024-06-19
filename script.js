@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const adjustButtonPositionsOnScroll = () => {
     const initialOffsetVertical = 54.5; // Adjust this value based on your button's top position in vh for vertical layout
-    const additionalOffsetVertical = 66.5; // Adjusted position for cloned button for vertical layout
+    const additionalOffsetVertical = 68.0; // Adjusted position for cloned button for vertical layout
 
     if (scrollContainer.style.overflowX === "auto") {
       // Horizontal layout
