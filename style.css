@@ -52,13 +52,13 @@
 
 /* Button positions for vertical scrolling */
 #icon-button.vertical {
-  top: 65vh;  /* Responsive positioning using vh */
-  left: 65%;   /* Centered horizontally */
+  top: 55.5vh;  /* Responsive positioning using vh */
+  left: 67%;   /* Centered horizontally */
   transform: translateX(-50%); /* Offset button width */
 }
 
 #cloned-button.vertical {
-  top: 78.3vh; /* Adjusted position for cloned button */
-  left: 65%;   /* Centered horizontally */
+  top: 68.6vh; /* Adjusted position for cloned button */
+  left: 67%;   /* Centered horizontally */
   transform: translateX(-50%); /* Offset button width */
 }
