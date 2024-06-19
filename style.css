@@ -3,8 +3,8 @@
   border: none;
   background: transparent;
   cursor: pointer;
-  width: 5.0em;
-  height: 5.0em;
+  width: 4.5em;
+  height: 4.5em;
   border-radius: 50%;
   overflow: hidden;
   position: absolute; /* Maintained for scroll adjustment */
