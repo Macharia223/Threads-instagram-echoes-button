@@ -1,4 +1,4 @@
-#icon-button,
+I7#icon-button,
 #cloned-button {
   border: none;
   background: transparent;
@@ -52,13 +52,13 @@
 
 /* Button positions for vertical scrolling */
 #icon-button.vertical {
-  top: 54.5vh;  /* Responsive positioning using vh */
+  top: 74.5vh;  /* Responsive positioning using vh */
   left: 67%;   /* Centered horizontally */
   transform: translateX(-50%); /* Offset button width */
 }
 
 #cloned-button.vertical {
-  top: 66.5vh; /* Adjusted position for cloned button */
+  top: 88.5vh; /* Adjusted position for cloned button */
   left: 67%;   /* Centered horizontally */
   transform: translateX(-50%); /* Offset button width */
 }
