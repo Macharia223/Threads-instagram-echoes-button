@@ -3,8 +3,8 @@ I7#icon-button,
   border: none;
   background: transparent;
   cursor: pointer;
-  width: 4.33em;
-  height: 4.33em;
+  width: 4.0em;
+  height: 4.0em;
   border-radius: 50%;
   overflow: hidden;
   position: absolute; /* Maintained for scroll adjustment */
@@ -52,13 +52,13 @@ I7#icon-button,
 
 /* Button positions for vertical scrolling */
 #icon-button.vertical {
-  top: 74.5vh;  /* Responsive positioning using vh */
+  top: 55.5vh;  /* Responsive positioning using vh */
   left: 67%;   /* Centered horizontally */
   transform: translateX(-50%); /* Offset button width */
 }
 
 #cloned-button.vertical {
-  top: 88.5vh; /* Adjusted position for cloned button */
+  top: 64.5vh; /* Adjusted position for cloned button */
   left: 67%;   /* Centered horizontally */
   transform: translateX(-50%); /* Offset button width */
 }
