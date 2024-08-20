@@ -1,14 +1,16 @@
 /* General button styles */
 #icon-button,
 #cloned-button {
-    width: 4vh;  /* Responsive size based on viewport height */
-    height: 4vh;
+    width: 8vh;  /* Responsive size based on viewport height */
+    height: 8vh;
     border-radius: 50%;
     overflow: hidden;
     position: absolute;
     background: transparent;
     border: none;
     cursor: pointer;
+    transform: translate(-50%, -50%); /* Center the button using transform */
+    z-index: 10; /* Ensure buttons are above the background */
 }
 
 #icon-button img,
@@ -28,6 +30,7 @@
     background-image: url("images/zuck.jpg"); /* Ensure this path is correct */
     background-size: cover;
     background-position: center;
+    z-index: 1; /* Background under the buttons */
 }
 
 /* Scroll container for revealed content */
@@ -38,21 +41,21 @@
     width: 100vw;
     height: 100vh;
     display: none;
-    justify-content: flex-start;  /* Aligns content to the start for proper scrolling */
+    justify-content: flex-start;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 9999;
-    overflow-x: auto;  /* Enable horizontal scrolling */
-    overflow-y: hidden;  /* Disable vertical scrolling */
-    scroll-snap-type: x mandatory;  /* Enable horizontal snap scrolling */
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
 }
 
 /* Each scrollable page */
 #scroll-container .scroll-page {
-    width: 100vw;  /* Each page takes up full width of the viewport */
-    height: 100vh; /* Each page takes up full height of the viewport */
+    width: 100vw;
+    height: 100vh;
     flex-shrink: 0;
-    scroll-snap-align: start;  /* Snap to the start of each page */
+    scroll-snap-align: start;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,11 +75,11 @@
 
 /* Independent button positioning */
 #icon-button.vertical {
-    top: 55.5vh;  /* Position the first button 55.5% from the top */
-    right: 50%;    /* Position the first button 67% from the left */
+    top: 55.5vh;
+    left: 67%; 
 }
 
 #cloned-button.vertical {
-    top: 64.5vh;  /* Position the second button 64.5% from the top */
-    left: 80%;    /* Position the second button 50% from the left */
+    top: 64.5vh;
+    left: 50%; 
 }
