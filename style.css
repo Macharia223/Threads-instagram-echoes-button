@@ -1,8 +1,8 @@
 /* General button styles */
 #icon-button,
 #cloned-button {
-    width: 8vh;  /* Responsive size based on viewport height */
-    height: 8vh;
+    width: 4vh;  /* Responsive size based on viewport height */
+    height: 4vh;
     border-radius: 50%;
     overflow: hidden;
     position: absolute;
@@ -73,10 +73,10 @@
 /* Independent button positioning */
 #icon-button.vertical {
     top: 55.5vh;  /* Position the first button 55.5% from the top */
-    left: 67%;    /* Position the first button 67% from the left */
+    right: 50%;    /* Position the first button 67% from the left */
 }
 
 #cloned-button.vertical {
     top: 64.5vh;  /* Position the second button 64.5% from the top */
-    left: 50%;    /* Position the second button 50% from the left */
+    left: 80%;    /* Position the second button 50% from the left */
 }
