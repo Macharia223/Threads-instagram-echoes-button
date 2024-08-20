@@ -1,42 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Icon Button Test</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icon Button Test</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <div id="page-image"></div>
+    <div id="page-image"></div>
 
-  <button id="icon-button" class="dynamic-button vertical">
-    <img src="images/Instastories.svg" alt="Icon Button">
-  </button>
+    <button id="icon-button" class="dynamic-button">
+        <img src="images/Instastories.svg" alt="Icon Button">
+    </button>
 
-  <button id="cloned-button" class="dynamic-button vertical">
-    <img src="images/Instastories.svg" alt="Icon Button">
-  </button>
+    <button id="cloned-button" class="dynamic-button">
+        <img src="images/Instastories.svg" alt="Icon Button">
+    </button>
 
-  <div id="scroll-container" class="hidden">
-    <!-- Content for iconButton -->
-    <div id="icon-button-content" class="hidden">
-      <div class="scroll-page">
-        <img src="images/pagetwo.jpg" alt="Page 1" style="width: 100%; height: 100%; object-fit: cover;">
-      </div>
-      <div class="scroll-page">
-        <img src="images/pagetwo.jpg" alt="Page 2" style="width: 100%; height: 100%; object-fit: cover;">
-      </div>
+    <div id="scroll-container" class="hidden">
+        <!-- Content for iconButton -->
+        <div id="icon-button-content" class="hidden">
+            <div class="scroll-page">
+                <img src="images/pagetwo.jpg" alt="Page 1">
+            </div>
+            <div class="scroll-page">
+                <img src="images/pagetwo.jpg" alt="Page 2">
+            </div>
+        </div>
+
+        <!-- Content for clonedButton -->
+        <div id="cloned-button-content" class="hidden">
+            <div class="scroll-page">
+                <img src="images/page3.png" alt="Page 3">
+            </div>
+            <div class="scroll-page">
+                <img src="images/page3.png" alt="Page 4">
+            </div>
+        </div>
     </div>
 
-    <!-- Content for clonedButton -->
-    <div id="cloned-button-content" class="hidden">
-      <div class="scroll-page">
-        <img src="images/page3.png" alt="Page 3" style="width: 100%; height: 100%; object-fit: cover;">
-      </div>
-      <div class="scroll-page">
-        <img src="images/page3.png" alt="Page 4" style="width: 100%; height: 100%; object-fit: cover;">
-      </div>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
