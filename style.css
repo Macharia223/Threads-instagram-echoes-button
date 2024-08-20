@@ -18,7 +18,7 @@
     object-fit: cover;
 }
 
-/* Initial background image where buttons are placed */
+/* Initial background image */
 #page-image {
     position: absolute;
     top: 0;
@@ -30,53 +30,53 @@
     background-position: center;
 }
 
-/* Scroll container setup for revealed content */
+/* Scroll container for revealed content */
 #scroll-container {
-    position: fixed;  /* Fix the content in place */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;    /* Full width of the viewport */
-    height: 100vh;   /* Full height of the viewport */
-    display: none;   /* Hidden by default */
-    justify-content: center;  /* Center content horizontally */
-    align-items: center;      /* Center content vertically */
-    background-color: rgba(0, 0, 0, 0.8); /* Optional: Add a semi-transparent background */
-    z-index: 9999;  /* Ensure it sits above other content */
-    overflow: hidden; /* Prevent scrolling */
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: flex-start;  /* Aligns content to the start for proper scrolling */
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    overflow-x: auto;  /* Enable horizontal scrolling */
+    overflow-y: hidden;  /* Disable vertical scrolling */
+    scroll-snap-type: x mandatory;  /* Enable horizontal snap scrolling */
 }
 
-/* Content inside scroll container */
+/* Each scrollable page */
 #scroll-container .scroll-page {
-    width: 100vw;  /* Full width of the viewport */
-    height: 100vh; /* Full height of the viewport */
-    flex-shrink: 0; /* Prevent shrinking */
-    scroll-snap-align: start;
+    width: 100vw;  /* Each page takes up full width of the viewport */
+    height: 100vh; /* Each page takes up full height of the viewport */
+    flex-shrink: 0;
+    scroll-snap-align: start;  /* Snap to the start of each page */
     display: flex;
-    justify-content: center;  /* Center the image within the container */
+    justify-content: center;
     align-items: center;
 }
 
 /* Images inside the revealed content */
 #scroll-container .scroll-page img {
-    max-width: 100%;  /* Ensure the image fits within the container */
-    max-height: 100%; /* Ensure the image fits within the container */
-    object-fit: cover; /* Cover the container without stretching */
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
 }
 
-/* Hidden class for elements that should not be displayed initially */
+/* Hidden class */
 .hidden {
     display: none;
 }
 
-/* Button positions for vertical layout */
+/* Independent button positioning */
 #icon-button.vertical {
     top: 55.5vh;  /* Position the first button 55.5% from the top */
-    left: 67%;    /* Adjust to move it horizontally */
-    transform: translateX(-50%);
+    left: 67%;    /* Position the first button 67% from the left */
 }
 
 #cloned-button.vertical {
     top: 64.5vh;  /* Position the second button 64.5% from the top */
-    left: 67%;    /* Adjust to move it horizontally */
-    transform: translateX(-50%);
+    left: 50%;    /* Position the second button 50% from the left */
 }
