@@ -1,63 +1,82 @@
-/* General Styles */
-body, html {
-    margin: 0;
-    padding: 0;
-    overflow: hidden; /* Prevents overflow */
+/* General button styles */
+#icon-button,
+#cloned-button {
+    width: 8vh;  /* Responsive size based on viewport height */
+    height: 8vh;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    background: transparent;
+    border: none;
+    cursor: pointer;
 }
 
+#icon-button img,
+#cloned-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Initial background image where buttons are placed */
 #page-image {
     position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url("images/zuck.jpg");
+    background-image: url("images/zuck.jpg"); /* Ensure this path is correct */
     background-size: cover;
     background-position: center;
 }
 
+/* Scroll container setup for revealed content */
+#scroll-container {
+    position: fixed;  /* Fix the content in place */
+    top: 0;
+    left: 0;
+    width: 100vw;    /* Full width of the viewport */
+    height: 100vh;   /* Full height of the viewport */
+    display: none;   /* Hidden by default */
+    justify-content: center;  /* Center content horizontally */
+    align-items: center;      /* Center content vertically */
+    background-color: rgba(0, 0, 0, 0.8); /* Optional: Add a semi-transparent background */
+    z-index: 9999;  /* Ensure it sits above other content */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Content inside scroll container */
+#scroll-container .scroll-page {
+    width: 100vw;  /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    flex-shrink: 0; /* Prevent shrinking */
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;  /* Center the image within the container */
+    align-items: center;
+}
+
+/* Images inside the revealed content */
+#scroll-container .scroll-page img {
+    max-width: 100%;  /* Ensure the image fits within the container */
+    max-height: 100%; /* Ensure the image fits within the container */
+    object-fit: cover; /* Cover the container without stretching */
+}
+
+/* Hidden class for elements that should not be displayed initially */
 .hidden {
     display: none;
 }
 
-#scroll-container {
-    display: flex;
-    height: 100vh;
-    overflow-x: hidden;
-    scroll-snap-type: x mandatory;
+/* Button positions for vertical layout */
+#icon-button.vertical {
+    top: 55.5vh;  /* Position the first button 55.5% from the top */
+    left: 67%;    /* Adjust to move it horizontally */
+    transform: translateX(-50%);
 }
 
-.scroll-page {
-    width: 100vw;
-    height: 100vh;
-    flex-shrink: 0;
-    scroll-snap-align: start;
-}
-
-.dynamic-button {
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    width: 3em;  /* Reduced size */
-    height: 3em; /* Reduced size */
-    border-radius: 50%;
-    overflow: hidden;
-    position: absolute;
-    transform: translateX(-50%); /* Centers the button horizontally */
-}
-
-#icon-button {
-    top: 60vh;  /* Adjust position as needed */
-    left: 67%;  
-}
-
-#cloned-button {
-    top: 70vh;  /* Adjusted for second button */
-    left: 67%;  
-}
-
-.dynamic-button img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+#cloned-button.vertical {
+    top: 64.5vh;  /* Position the second button 64.5% from the top */
+    left: 67%;    /* Adjust to move it horizontally */
+    transform: translateX(-50%);
 }
