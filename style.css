@@ -1,8 +1,8 @@
 /* General button styles */
 #icon-button,
 #cloned-button {
-    width: 8vh;  /* Responsive size based on viewport height */
-    height: 8vh;
+    width: 5vh;  /* Responsive size based on viewport height */
+    height: 5vh;
     border-radius: 50%;
     overflow: hidden;
     position: absolute;
