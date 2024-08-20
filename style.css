@@ -1,64 +1,63 @@
-I7#icon-button,
-#cloned-button {
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  width: 4.0em;
-  height: 4.0em;
-  border-radius: 50%;
-  overflow: hidden;
-  position: absolute; /* Maintained for scroll adjustment */
-}
-
-#icon-button img,
-#cloned-button img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevents overflow */
 }
 
 #page-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: url("images/zuck.jpg"); /* Ensure this path is correct */
-  background-size: cover;
-  background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("images/zuck.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
 .hidden {
-  display: none;
+    display: none;
 }
 
 #scroll-container {
-  display: flex;
-  height: 100vh;
-  overflow-x: hidden; /* Initially hide horizontal scroll */
-  scroll-snap-type: x mandatory;
+    display: flex;
+    height: 100vh;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
 }
 
 .scroll-page {
-  width: 100vw;
-  height: 100vh;
-  flex-shrink: 0;
-  scroll-snap-align: start;
+    width: 100vw;
+    height: 100vh;
+    flex-shrink: 0;
+    scroll-snap-align: start;
 }
 
 .dynamic-button {
-  position: absolute;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    width: 3em;  /* Reduced size */
+    height: 3em; /* Reduced size */
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    transform: translateX(-50%); /* Centers the button horizontally */
 }
 
-/* Button positions for vertical scrolling */
-#icon-button.vertical {
-  top: 55.5vh;  /* Responsive positioning using vh */
-  left: 67%;   /* Centered horizontally */
-  transform: translateX(-50%); /* Offset button width */
+#icon-button {
+    top: 60vh;  /* Adjust position as needed */
+    left: 67%;  
 }
 
-#cloned-button.vertical {
-  top: 64.5vh; /* Adjusted position for cloned button */
-  left: 67%;   /* Centered horizontally */
-  transform: translateX(-50%); /* Offset button width */
+#cloned-button {
+    top: 70vh;  /* Adjusted for second button */
+    left: 67%;  
+}
+
+.dynamic-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
