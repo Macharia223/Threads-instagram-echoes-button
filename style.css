@@ -1,8 +1,8 @@
 /* General button styles */
 #icon-button,
 #cloned-button {
-    width: 2.4em; /* Responsive size based on the element's font size */
-    height: 2.4em; /* Responsive size based on the element's font size */
+    width: 2.4em;
+    height: 2.4em;
     border-radius: 50%;
     overflow: hidden;
     position: absolute;
@@ -27,7 +27,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url("images/zuck.jpg"); /* Ensure this path is correct */
+    background-image: url("images/zuck.jpg"); /* Replace with your image */
     background-size: cover;
     background-position: center;
     z-index: 1;
@@ -51,21 +51,18 @@
 }
 
 /* Each scrollable page */
-#scroll-container .scroll-page {
+.scroll-page {
     width: 100vw;
     height: 100vh;
-    flex-shrink: 0;
-    scroll-snap-align: start;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Images inside the revealed content */
-#scroll-container .scroll-page img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.scroll-page img {
+    max-width: 80%; /* Adjust as needed */
+    height: auto;
+    object-fit: contain;
 }
 
 /* Hidden class */
@@ -75,11 +72,11 @@
 
 /* Independent button positioning */
 #icon-button.vertical {
-    top: 64.5vh;
-    left: 80%;
+    top: 55.5vh;
+    left: 67%;
 }
 
 #cloned-button.vertical {
-    top: 69vh;
-    left: 80%;
+    top: 64.5vh;
+    left: 50%;
 }
