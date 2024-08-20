@@ -1,16 +1,16 @@
 /* General button styles */
 #icon-button,
 #cloned-button {
-    width: 5vh;  /* Responsive size based on viewport height */
-    height: 5vh;
+    width: 5em;  /* Responsive size based on the element's font size */
+    height: 5em; /* Responsive size based on the element's font size */
     border-radius: 50%;
     overflow: hidden;
     position: absolute;
     background: transparent;
     border: none;
     cursor: pointer;
-    transform: translate(-50%, -50%); /* Center the button using transform */
-    z-index: 10; /* Ensure buttons are above the background */
+    transform: translate(-50%, -50%);
+    z-index: 10;
 }
 
 #icon-button img,
@@ -30,7 +30,7 @@
     background-image: url("images/zuck.jpg"); /* Ensure this path is correct */
     background-size: cover;
     background-position: center;
-    z-index: 1; /* Background under the buttons */
+    z-index: 1;
 }
 
 /* Scroll container for revealed content */
@@ -75,11 +75,11 @@
 
 /* Independent button positioning */
 #icon-button.vertical {
-    top: 55.5vh;
-    left: 67%; 
+    top: 64.5vh;
+    left: 80%;
 }
 
 #cloned-button.vertical {
-    top: 64.5vh;
-    left: 50%; 
+    top: 69vh;
+    left: 80%;
 }
