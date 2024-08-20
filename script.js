@@ -2,33 +2,37 @@ document.addEventListener("DOMContentLoaded", () => {
     const iconButton = document.getElementById("icon-button");
     const clonedButton = document.getElementById("cloned-button");
     const scrollContainer = document.getElementById("scroll-container");
-    const pageImageDiv = document.getElementById("page-image");
-    const iconButtonContent = document.getElementById("icon-button-content");
-    const clonedButtonContent = document.getElementById("cloned-button-content");
 
+    const setInitialButtonPositions = () => {
+        iconButton.style.top = '55.5vh';
+        iconButton.style.left = '67%';
+        clonedButton.style.top = '64.5vh';
+        clonedButton.style.left = '50%';
+    };
+
+    // Set positions initially
+    setInitialButtonPositions();
+
+    // Add event listener for resize to re-adjust button positions
+    window.addEventListener("resize", setInitialButtonPositions);
+
+    // Navigation function remains the same
     const navigateToScrollPage = (content) => {
         // Hide the initial page content and buttons
-        pageImageDiv.style.display = "none";
+        document.getElementById("page-image").style.display = "none";
         iconButton.style.display = "none";
         clonedButton.style.display = "none";
+
+        // Hide both content sections initially
+        document.getElementById("icon-button-content").style.display = "none";
+        document.getElementById("cloned-button-content").style.display = "none";
 
         // Show the horizontal scroll container and the specific content section
         scrollContainer.style.display = "flex";
         content.style.display = "flex";
-        scrollContainer.style.overflowX = "auto";
     };
 
-    iconButton.addEventListener("click", () => {
-        navigateToScrollPage(iconButtonContent);
-    });
-
-    clonedButton.addEventListener("click", () => {
-        navigateToScrollPage(clonedButtonContent);
-    });
-
-    // Update positions on window resize
-    window.addEventListener("resize", () => {
-        iconButton.style.top = "60vh";
-        clonedButton.style.top = "70vh";
-    });
+    // Attach click event listeners to the buttons
+    iconButton.addEventListener("click", () => navigateToScrollPage(document.getElementById("icon-button-content")));
+    clonedButton.addEventListener("click", () => navigateToScrollPage(document.getElementById("cloned-button-content")));
 });
