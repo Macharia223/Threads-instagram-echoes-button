@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const scrollContainer = document.getElementById("scroll-container");
 
     const setInitialButtonPositions = () => {
-        iconButton.style.top = '55vh';
+        iconButton.style.top = '56.67vh';
         iconButton.style.left = '67%';
-        clonedButton.style.top = '68.5vh';
+        clonedButton.style.top = '68.6vh';
         clonedButton.style.left = '67%';
     };
 
