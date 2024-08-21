@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const setInitialButtonPositions = () => {
         iconButton.style.top = '55vh';
-        iconButton.style.left = '80%';
+        iconButton.style.left = '67%';
         clonedButton.style.top = '68.5vh';
-        clonedButton.style.left = '80%';
+        clonedButton.style.left = '67%';
     };
 
     // Set positions initially
