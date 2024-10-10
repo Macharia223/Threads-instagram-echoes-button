@@ -27,7 +27,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url("images/zuck.jpg"); /* Ensure this path is correct */
+    background-image: url("images/homepagee.png"); /* Ensure this path is correct */
     background-size: cover;
     background-position: center;
     z-index: 1;
