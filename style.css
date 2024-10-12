@@ -1,8 +1,8 @@
 /* General button styles */
 #icon-button,
 #cloned-button {
-    width: 2.35em;  /* Responsive size based on the element's font size */
-    height: 2.35em; /* Responsive size based on the element's font size */
+    width: 2.3em;  /* Responsive size based on the element's font size */
+    height: 2.3em; /* Responsive size based on the element's font size */
     border-radius: 50%;
     overflow: hidden;
     position: absolute;
