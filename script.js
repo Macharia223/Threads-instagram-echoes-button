@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
         iconButton.style.left = '57.5vw';
         clonedButton.style.top = '90.1vh';
         clonedButton.style.left = '56vw';
-        backButton.style.top = '10vh';
-        backButton.style.left = '10vw';
+        backButton.style.top = '25vh';
+        backButton.style.left = '30vw';
     };
 
     setInitialButtonPositions();
