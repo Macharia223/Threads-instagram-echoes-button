@@ -3,55 +3,61 @@ document.addEventListener("DOMContentLoaded", () => {
     const clonedButton = document.getElementById("cloned-button");
     const backButton = document.getElementById("back-button");
     const scrollContainer = document.getElementById("scroll-container");
-    const pageImage = document.getElementById("page-image");
 
-    const setInitialButtonPositions = () => {
-        const buttonSize = Math.min(window.innerWidth * 0.12, 60);  // Limits to a max of 60px
+    // Function to dynamically set button sizes relative to viewport
+    const setButtonSizes = () => {
+        const buttonSizeVW = 12; // 12vw for width
+        const buttonSizeVH = 15; // 15vh for height
 
-        // Set button dimensions
-        iconButton.style.width = `${buttonSize}px`;
-        iconButton.style.height = `${buttonSize}px`;
-        clonedButton.style.width = `${buttonSize}px`;
-        clonedButton.style.height = `${buttonSize}px`;
-        backButton.style.width = `${buttonSize}px`;
-        backButton.style.height = `${buttonSize}px`;
+        // Use vw and vh without px for a fully relative approach
+        iconButton.style.width = `${buttonSizeVW}vw`;
+        iconButton.style.height = `${buttonSizeVH}vh`;
+        clonedButton.style.width = `${buttonSizeVW}vw`;
+        clonedButton.style.height = `${buttonSizeVH}vh`;
+        backButton.style.width = `${buttonSizeVW}vw`;
+        backButton.style.height = `${buttonSizeVH}vh`;
     };
 
+    // Set initial button sizes and positions
+    const setInitialButtonPositions = () => {
+        setButtonSizes();
+        iconButton.style.top = '32.2vh';
+        iconButton.style.left = '57.5vw';
+        clonedButton.style.top = '90.1vh';
+        clonedButton.style.left = '56vw';
+        backButton.style.top = '10vh';
+        backButton.style.left = '10vw';
+    };
+
+    // Call functions on load and resize
+    setInitialButtonPositions();
+    window.addEventListener("resize", () => {
+        setButtonSizes();
+    });
+
+    // Navigation functions
     const navigateToScrollPage = (content) => {
-        pageImage.style.display = "none";
+        document.getElementById("page-image").style.display = "none";
         iconButton.style.display = "none";
         clonedButton.style.display = "none";
-        backButton.classList.remove("hidden");
-
-        document.getElementById("icon-button-content").style.display = "none";
-        document.getElementById("cloned-button-content").style.display = "none";
-
+        backButton.style.display = "block"; // Show the back button
         scrollContainer.style.display = "flex";
         content.style.display = "flex";
     };
 
-    const backToMainPage = () => {
-        pageImage.style.display = "block";
+    const goBackToHomePage = () => {
+        scrollContainer.style.display = "none";
+        document.getElementById("page-image").style.display = "block";
         iconButton.style.display = "block";
         clonedButton.style.display = "block";
-        backButton.classList.add("hidden");
-
-        scrollContainer.style.display = "none";
-        document.getElementById("icon-button-content").style.display = "none";
-        document.getElementById("cloned-button-content").style.display = "none";
+        backButton.style.display = "none"; // Hide the back button
     };
 
-    // Set positions initially
-    setInitialButtonPositions();
-
-    // Add event listener for resize to re-adjust button positions
-    window.addEventListener("resize", setInitialButtonPositions);
-
-    // Attach click event listeners to the buttons
+    // Attach event listeners
     iconButton.addEventListener("click", () => navigateToScrollPage(document.getElementById("icon-button-content")));
     clonedButton.addEventListener("click", () => navigateToScrollPage(document.getElementById("cloned-button-content")));
-    backButton.addEventListener("click", backToMainPage);
-
+    backButton.addEventListener("click", goBackToHomePage);
+});
     // Listen for Android back button if applicable
     window.addEventListener("popstate", backToMainPage);
 });
