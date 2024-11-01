@@ -1,94 +1,58 @@
-/* General button styles with responsive sizes */
-#icon-button,
-#cloned-button,
-#back-button {
-    width: 12vw;
-    height: 12vw;
-    max-width: 15vh;
-    max-height: 15vh;
-    border-radius: 50%;
-    overflow: hidden;
-    position: absolute;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-}
+document.addEventListener("DOMContentLoaded", () => {
+    const iconButton = document.getElementById("icon-button");
+    const clonedButton = document.getElementById("cloned-button");
+    const backButton = document.getElementById("back-button");
+    const scrollContainer = document.getElementById("scroll-container");
+    const iconButtonContent = document.getElementById("icon-button-content");
+    const clonedButtonContent = document.getElementById("cloned-button-content");
 
-#icon-button img,
-#cloned-button img,
-#back-button img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+    // Set initial button sizes and positions
+    const setButtonSizesAndPositions = () => {
+        iconButton.style.width = "12vw";
+        iconButton.style.height = "12vw";
+        clonedButton.style.width = "12vw";
+        clonedButton.style.height = "12vw";
+        backButton.style.width = "12vw";
+        backButton.style.height = "12vw";
+    };
 
-/* Initial background image */
-#page-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: url("images/githome.png");
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-}
+    const setInitialButtonPositions = () => {
+        setButtonSizesAndPositions();
+        iconButton.style.top = '32.2vh';
+        iconButton.style.left = '57.5vw';
+        clonedButton.style.top = '90.1vh';
+        clonedButton.style.left = '56vw';
+        backButton.style.top = '10vh';
+        backButton.style.left = '10vw';
+    };
 
-/* Scroll container for revealed content */
-#scroll-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: none;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 9999;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-}
+    setInitialButtonPositions();
 
-/* Each scrollable page */
-#scroll-container .scroll-page {
-    width: 100vw;
-    height: 100vh;
-    flex-shrink: 0;
-    scroll-snap-align: start;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    // Resize event to adjust button sizes and positions
+    window.addEventListener("resize", setButtonSizesAndPositions);
 
-/* Images inside the revealed content */
-#scroll-container .scroll-page img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-}
+    // Navigation functions
+    const navigateToScrollPage = (content) => {
+        document.getElementById("page-image").style.display = "none";
+        iconButton.style.display = "none";
+        clonedButton.style.display = "none";
+        backButton.style.display = "block";
+        scrollContainer.style.display = "flex";
+        content.style.display = "flex";
+    };
 
-/* Hidden class */
-.hidden {
-    display: none;
-}
+    const goBackToHomePage = () => {
+        scrollContainer.style.display = "none";
+        iconButtonContent.style.display = "none";
+        clonedButtonContent.style.display = "none";
+        document.getElementById("page-image").style.display = "block";
+        iconButton.style.display = "block";
+        clonedButton.style.display = "block";
+        backButton.style.display = "none";
+    };
 
-/* Independent button positioning */
-#icon-button {
-    top: 32.2vh;
-    left: 57.5vw;
-}
-
-#cloned-button {
-    top: 90.1vh;
-    left: 56vw;
-}
-
-#back-button {
-    top: 10vh;
-    left: 10vw;
-}
+    // Attach event listeners
+    iconButton.addEventListener("click", () => navigateToScrollPage(iconButtonContent));
+    clonedButton.addEventListener("click", () => navigateToScrollPage(clonedButtonContent));
+    backButton.addEventListener("click", goBackToHomePage);
+});
