@@ -1,8 +1,11 @@
-/* General button styles */
+/* General button styles with responsive sizes */
 #icon-button,
-#cloned-button {
-    width: 2.3em;  /* Responsive size based on the element's font size */
-    height: 2.3em; /* Responsive size based on the element's font size */
+#cloned-button,
+#back-button {
+    width: 12vw;
+    height: 12vw;
+    max-width: 15vh; /* Adjust if needed for extremely wide screens */
+    max-height: 15vh;
     border-radius: 50%;
     overflow: hidden;
     position: absolute;
@@ -14,7 +17,8 @@
 }
 
 #icon-button img,
-#cloned-button img {
+#cloned-button img,
+#back-button img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -74,12 +78,17 @@
 }
 
 /* Independent button positioning */
-#icon-button.vertical {
-    top: 58vh;
-    left: 67%;
+#icon-button {
+    top: 32.2vh;
+    left: 57.5vw;
 }
 
-#cloned-button.vertical {
-    top: 64.5vh;
-    left: 50%;
+#cloned-button {
+    top: 90.1vh;
+    left: 56vw;
+}
+
+#back-button {
+    top: 10vh;
+    left: 10vw;
 }
