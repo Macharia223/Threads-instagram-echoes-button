@@ -33,15 +33,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Navigation functions
     const navigateToScrollPage = (content) => {
+        // Hide the main page and buttons, show scroll content and back button
         document.getElementById("page-image").style.display = "none";
         iconButton.style.display = "none";
         clonedButton.style.display = "none";
         backButton.style.display = "block";
         scrollContainer.style.display = "flex";
         content.style.display = "flex";
+
+        // Push state to enable the Android back button functionality
+        history.pushState({ page: "content" }, "", "#content");
     };
 
     const goBackToHomePage = () => {
+        // Hide scroll content and back button, show main page and buttons
         scrollContainer.style.display = "none";
         iconButtonContent.style.display = "none";
         clonedButtonContent.style.display = "none";
@@ -49,10 +54,23 @@ document.addEventListener("DOMContentLoaded", () => {
         iconButton.style.display = "block";
         clonedButton.style.display = "block";
         backButton.style.display = "none";
+
+        // Return to the main state in the browser history
+        history.pushState({ page: "home" }, "", "#home");
     };
 
     // Attach event listeners
     iconButton.addEventListener("click", () => navigateToScrollPage(iconButtonContent));
     clonedButton.addEventListener("click", () => navigateToScrollPage(clonedButtonContent));
     backButton.addEventListener("click", goBackToHomePage);
+
+    // Handle the Android back button functionality
+    window.addEventListener("popstate", (event) => {
+        if (event.state && event.state.page === "home") {
+            goBackToHomePage();
+        }
+    });
+
+    // Set the initial state in history to enable back navigation
+    history.replaceState({ page: "home" }, "", "#home");
 });
