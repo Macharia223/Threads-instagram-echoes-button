@@ -2,15 +2,15 @@
 #icon-button,
 #cloned-button,
 #back-button {
-    width: 12vw;
+    width: 15vw;
     height: 12vw;
-    max-width: 15vh; /* Adjust if needed for extremely wide screens */
+    max-width: 15vh;
     max-height: 15vh;
     border-radius: 50%;
     overflow: hidden;
     position: absolute;
     background: transparent;
-    border: none;
+    border: none; 
     cursor: pointer;
     transform: translate(-50%, -50%);
     z-index: 10;
@@ -31,7 +31,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url("images/githome.png"); /* Ensure this path is correct */
+    background-image: url("images/githome.png");
     background-size: cover;
     background-position: center;
     z-index: 1;
