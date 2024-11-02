@@ -8,12 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Set initial button sizes and positions
     const setButtonSizesAndPositions = () => {
-        iconButton.style.width = "12vw";
-        iconButton.style.height = "12vw";
-        clonedButton.style.width = "12vw";
-        clonedButton.style.height = "12vw";
-        backButton.style.width = "12vw";
-        backButton.style.height = "12vw";
+        iconButton.style.width = "7vw";
+        iconButton.style.height = "7vw";
+        clonedButton.style.width = "7vw";
+        clonedButton.style.height = "7vw";
+        backButton.style.width = "7vw";
+        backButton.style.height = "7vw";
     };
 
     const setInitialButtonPositions = () => {
