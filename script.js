@@ -8,12 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Set initial button sizes and positions
     const setButtonSizesAndPositions = () => {
-        iconButton.style.width = "6.8vw";
-        iconButton.style.height = "6.8vw";
-        clonedButton.style.width = "6.8vw";
-        clonedButton.style.height = "6.8vw";
-        backButton.style.width = "6.8vw";
-        backButton.style.height = "6.8vw";
+        iconButton.style.width = "6vw";
+        iconButton.style.height = "6vw";
+        clonedButton.style.width = "6vw";
+        clonedButton.style.height = "6vw";
+        backButton.style.width = "6vw";
+        backButton.style.height = "6vw";
     };
 
     const setInitialButtonPositions = () => {
@@ -74,13 +74,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Android back button functionality
     window.addEventListener("popstate", (event) => {
-        if (event.state && event.state.page === "home") {
-            goBackToHomePage();
-        } else {
+        if (event.state && event.state.page === "content") {
             handleBackButtonInScroll();
+        } else if (event.state && event.state.page === "home") {
+            goBackToHomePage();
         }
     });
 
     // Set the initial state in history
     history.replaceState({ page: "home" }, "", "#home");
-}); 
+});
