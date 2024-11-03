@@ -8,12 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Set initial button sizes and positions
     const setButtonSizesAndPositions = () => {
-        iconButton.style.width = "7vw";
-        iconButton.style.height = "7vw";
-        clonedButton.style.width = "7vw";
-        clonedButton.style.height = "7vw";
-        backButton.style.width = "7vw";
-        backButton.style.height = "7vw";
+        iconButton.style.width = "6.8vw";
+        iconButton.style.height = "6.8vw";
+        clonedButton.style.width = "6.8vw";
+        clonedButton.style.height = "6.8vw";
+        backButton.style.width = "6.8vw";
+        backButton.style.height = "6.8vw";
     };
 
     const setInitialButtonPositions = () => {
@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
         iconButton.style.left = '57.5vw';
         clonedButton.style.top = '90.1vh';
         clonedButton.style.left = '56vw';
-        backButton.style.top = '25vh';
-        backButton.style.left = '30vw';
+        backButton.style.top = '10vh';
+        backButton.style.left = '10vw';
     };
 
     setInitialButtonPositions();
@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Navigation functions
     const navigateToScrollPage = (content) => {
-        // Hide the main page and buttons, show scroll content and back button
         document.getElementById("page-image").style.display = "none";
         iconButton.style.display = "none";
         clonedButton.style.display = "none";
@@ -41,12 +40,11 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollContainer.style.display = "flex";
         content.style.display = "flex";
 
-        // Push state to enable the Android back button functionality
+        // Push state to enable Android back button functionality
         history.pushState({ page: "content" }, "", "#content");
     };
 
     const goBackToHomePage = () => {
-        // Hide scroll content and back button, show main page and buttons
         scrollContainer.style.display = "none";
         iconButtonContent.style.display = "none";
         clonedButtonContent.style.display = "none";
@@ -55,22 +53,34 @@ document.addEventListener("DOMContentLoaded", () => {
         clonedButton.style.display = "block";
         backButton.style.display = "none";
 
-        // Return to the main state in the browser history
         history.pushState({ page: "home" }, "", "#home");
+    };
+
+    // Back button functionality for scroll navigation
+    const handleBackButtonInScroll = () => {
+        if (scrollContainer.scrollLeft > 0) {
+            // Scroll back one full page width
+            scrollContainer.scrollBy({ left: -window.innerWidth, behavior: 'smooth' });
+        } else {
+            // If at the first page, go back to the main page
+            goBackToHomePage();
+        }
     };
 
     // Attach event listeners
     iconButton.addEventListener("click", () => navigateToScrollPage(iconButtonContent));
     clonedButton.addEventListener("click", () => navigateToScrollPage(clonedButtonContent));
-    backButton.addEventListener("click", goBackToHomePage);
+    backButton.addEventListener("click", handleBackButtonInScroll);
 
-    // Handle the Android back button functionality
+    // Android back button functionality
     window.addEventListener("popstate", (event) => {
         if (event.state && event.state.page === "home") {
             goBackToHomePage();
+        } else {
+            handleBackButtonInScroll();
         }
     });
 
-    // Set the initial state in history to enable back navigation
+    // Set the initial state in history
     history.replaceState({ page: "home" }, "", "#home");
-});
+}); 
